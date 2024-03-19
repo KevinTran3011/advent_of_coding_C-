@@ -79,7 +79,11 @@ int checkGame(const string& inputFileName){
 
 
         if(isGameValid) {
-            cout << "Game:" << id << " Quantity: " << quantity << " Color: " << color << endl;
+            // Iterate over the colorCount map
+            for(auto const& pair: colorCount) {
+                // Print the color and its quantity
+                cout << "Game:" << id << " Color: " << pair.first << ", Quantity: " << pair.second << endl;
+            }
 
             total += id;
         }
