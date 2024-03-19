@@ -47,7 +47,7 @@ int checkGame(const string& inputFileName){
                 {"blue", 0}
         };
 
-        int id = stoi(gameId.substr(gameId.find(" ") + 1)); // Corrected the game ID extraction
+        int id = stoi(gameId.substr(gameId.find(" ") + 1)); 
 
         while (getline(combination, subsets, ';')) {
             istringstream cubeQuantity(subsets);
@@ -57,8 +57,6 @@ int checkGame(const string& inputFileName){
                 stringstream ss(cube);
                 ss >> quantity >> color;
 
-
-                // Update the colorCount map accordingly
                 if(colorCount.find(color) != colorCount.end()) {
                     colorCount[color] = max(stoi(quantity),     colorCount[color]);
                 } else {
@@ -75,13 +73,8 @@ int checkGame(const string& inputFileName){
             } 
         }
 
-        // Check game validity after processing all cube quantities
-
-
         if(isGameValid) {
-            // Iterate over the colorCount map
             for(auto const& pair: colorCount) {
-                // Print the color and its quantity
                 cout << "Game:" << id << " Color: " << pair.first << ", Quantity: " << pair.second << endl;
             }
 
