@@ -55,7 +55,7 @@ int checkGearTotal(const string &inputFileName)
                 total += numInt;
                 continue;
             }
-            for (int k = start - 1; k <= j + 1; ++k)
+            for (int k = start - 1; k < j + 1; ++k)
             {
                 if (isSymbol(i - 1, k, lines, n, m) || isSymbol(i + 1, k, lines, n, m))
                 {
