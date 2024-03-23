@@ -67,7 +67,6 @@ int checkParttNum(const string &input)
             if (lines[i][j] == '*' && gears[i][j].size() == 2)
             {
                 gearTotal = gears[i][j][0] * gears[i][j][1];
-                cout << gears[i][j][0] << "|" << gears[i][j][1] << "|" << gearTotal << endl;
 
                 finalResult += gearTotal;
             }
